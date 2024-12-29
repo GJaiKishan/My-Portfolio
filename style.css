@@ -255,51 +255,56 @@ h4 {
     font-size: .9rem;
 }
 
+
 /* Projects Section */
 .projects-container {
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Ensures items are laid out in a row */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: flex-start; /* Align items at the top */
     margin: auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensures items stay in a single row */
+    gap: 0; /* Removes spacing between items */
 }
 
-.image-container {
-    bottom: 2rem;
-    height: 10rem;
-    position: relative;
+.projects-item {
+    overflow: hidden;
+    width: 20rem; /* Fixed width for each project card */
+    background: #2c2c6c;
+    border-radius: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30rem; /* Fixed height for consistency */
+    animation: fadeInUp 1s ease-out; /* Adding animation */
+    margin: 0; /* Removes margin between items */
+}
 
+/* Ensuring the image container has a fixed height */
+.image-container {
+    height: 15rem; /* Fixed height for images */
+    position: relative;
 }
 
 .image-container img {
     border-radius: 1rem;
-    border-radius: 1rem;
-    padding: 8% 8%;
     width: 100%; 
     height: 100%;
     object-fit: cover;
     object-position: top center;
 }
 
-.image-container .p-one {
-    width: 200px;
-}
-
-.p-three {
-    background: url('404 Not Found.png');
-}
-
-.p-four {
-    background: url('project.png');
-}
-
-.projects-item {
-    overflow: hidden;
-    width: 20rem;
-    margin: 1rem;
-    background: #2c2c6c;
-    border-radius: 1.5rem;
-    padding: 2rem 1rem;
-    text-align: center;
+/* Adding animation to make items fade in and slide up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .projects-item h1 {
@@ -310,8 +315,7 @@ h4 {
 .projects-item p {
     line-height: 20px;
     font-size: .9rem;
-} 
-
+}
 
 /* Contact me Section */
 .form {
@@ -386,7 +390,7 @@ ul li a:hover {
 
 #footer p {
     color: #1f1f38;
-    font-size: .9srem;
+    font-size: .8srem;
 }
 
 
